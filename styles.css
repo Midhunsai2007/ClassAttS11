@@ -1196,10 +1196,11 @@ body {
         padding: var(--spacing-md);
     }
 
-    /* Mobile Student Card - Stack Layout */
+    /* Mobile Student Card - Row Layout */
     .student-card {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        /* Changed from column to keep it straight */
+        align-items: center;
         gap: var(--spacing-sm);
         padding: var(--spacing-md);
     }
@@ -1208,6 +1209,8 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-xs);
+        flex: 1;
+        /* Ensure it takes up available space */
     }
 
     .student-reg {
@@ -1228,11 +1231,17 @@ body {
     }
 
     .status-toggle {
-        width: 100%;
+        width: auto;
+        /* Changed from 100% to keep it inline */
         justify-content: center;
-        padding: 10px 16px;
-        font-size: 0.8rem;
-        margin-top: var(--spacing-xs);
+        padding: 8px 12px;
+        /* Slightly reduced padding */
+        font-size: 0.75rem;
+        /* Smaller font text */
+        margin-top: 0;
+        /* Removed margin top */
+        min-width: 70px;
+        /* Kept min width for consistency */
     }
 
     .section-header {

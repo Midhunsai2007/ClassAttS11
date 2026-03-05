@@ -185,7 +185,7 @@ function submitAttendance() {
 
     // Get course details
     const course = courses.find(c => c.code === selectedCourse);
-    const absentees = students.filter(s => !attendance[s.id]);
+    const absentees = students.filter(s => !attendance[s.regNo]);
 
     // Format date nicely
     const formattedDate = new Date(selectedDate).toLocaleDateString('en-IN', {
@@ -235,7 +235,7 @@ function submitAttendance() {
 
 function saveToHistory() {
     const course = courses.find(c => c.code === selectedCourse);
-    const absentees = students.filter(s => !attendance[s.id]);
+    const absentees = students.filter(s => !attendance[s.regNo]);
 
     const record = {
         id: Date.now(),
@@ -267,7 +267,7 @@ function saveToHistory() {
 
 function copyToWhatsApp() {
     const course = courses.find(c => c.code === selectedCourse);
-    const absentees = students.filter(s => !attendance[s.id]);
+    const absentees = students.filter(s => !attendance[s.regNo]);
 
     const formattedDate = new Date(selectedDate).toLocaleDateString('en-IN', {
         weekday: 'long',
@@ -296,7 +296,7 @@ function copyToWhatsApp() {
 
 function saveToExcel() {
     const course = courses.find(c => c.code === selectedCourse);
-    const absentees = students.filter(s => !attendance[s.id]);
+    const absentees = students.filter(s => !attendance[s.regNo]);
 
     // Format date nicely
     const formattedDate = new Date(selectedDate).toLocaleDateString('en-IN', {
