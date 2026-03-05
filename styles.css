@@ -6,29 +6,34 @@
 /* CSS Variables */
 :root {
     /* Primary Colors */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-    --danger-gradient: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
-    --warning-gradient: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    --primary-gradient: #2563eb;
+    /* Solid Blue */
+    --secondary-gradient: #475569;
+    /* Slate */
+    --success-gradient: #16a34a;
+    /* Green */
+    --danger-gradient: #dc2626;
+    /* Red */
+    --warning-gradient: #d97706;
+    /* Amber */
 
     /* Solid Colors */
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --success-color: #38ef7d;
-    --danger-color: #f45c43;
-    --warning-color: #ffd200;
+    --primary-color: #2563eb;
+    --secondary-color: #475569;
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+    --warning-color: #d97706;
 
-    /* Glass Effect */
-    --glass-bg: rgba(255, 255, 255, 0.15);
-    --glass-border: rgba(255, 255, 255, 0.25);
-    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    --glass-blur: blur(12px);
+    /* Professional Surfaces (Replacing Glass) */
+    --glass-bg: #ffffff;
+    --glass-border: #e2e8f0;
+    --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --glass-blur: none;
 
     /* Text Colors */
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.85);
-    --text-muted: rgba(255, 255, 255, 0.6);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
 
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -65,7 +70,8 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: #f8fafc;
+    /* Light professional background */
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
@@ -145,11 +151,9 @@ body {
     padding: var(--spacing-lg);
 }
 
-/* Glass Card */
+/* Professional Card (Replacing Glass Card) */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--glass-shadow);
@@ -191,22 +195,20 @@ body {
 .university-name {
     font-size: 1.75rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #fff 0%, #e0e0ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
     letter-spacing: -0.5px;
 }
 
 .section-badge {
-    background: var(--primary-gradient);
+    background: #e0f2fe;
+    color: #0284c7;
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--radius-full);
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    border: 1px solid #bae6fd;
 }
 
 /* Three Dots Menu Button */
@@ -268,13 +270,13 @@ body {
     opacity: 0.8;
 }
 
-/* Glass Input & Select */
+/* Solid Inputs */
 .glass-input,
 .glass-select {
     width: 100%;
     padding: var(--spacing-md) var(--spacing-lg);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--glass-border);
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-family: inherit;
@@ -286,13 +288,14 @@ body {
 .glass-input:focus,
 .glass-select:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    /* Soft blue ring */
 }
 
 .glass-select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
     background-size: 20px;
@@ -300,7 +303,7 @@ body {
 }
 
 .glass-select option {
-    background: #1a1a2e;
+    background: #ffffff;
     color: var(--text-primary);
     padding: var(--spacing-sm);
 }
@@ -326,8 +329,9 @@ body {
 }
 
 .date-input::-webkit-calendar-picker-indicator {
-    filter: invert(1);
     cursor: pointer;
+    filter: none;
+    /* Removed invert as bg is white now */
 }
 
 /* Quick Actions */
@@ -430,12 +434,14 @@ body {
 
 .stat-dot.present {
     background: var(--success-color);
-    box-shadow: 0 0 10px var(--success-color);
+    box-shadow: none;
+    /* Removed neon glow */
 }
 
 .stat-dot.absent {
     background: var(--danger-color);
-    box-shadow: 0 0 10px var(--danger-color);
+    box-shadow: none;
+    /* Removed neon glow */
 }
 
 .stat strong {
@@ -448,19 +454,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-    max-height: 600px;
-    overflow-y: auto;
-    padding-right: var(--spacing-sm);
 }
 
 /* Student Card */
 .student-card {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid transparent;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: var(--transition-normal);
@@ -468,32 +471,28 @@ body {
 }
 
 .student-card:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: #f8fafc;
+    border-color: #cbd5e1;
     transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Subtler shadow */
 }
 
 .student-card.present {
-    border-color: rgba(56, 239, 125, 0.4);
+    border-color: #bbf7d0;
+    /* subtle green border */
+    background: #f0fdf4;
+    /* subtle green bg */
 }
 
 .student-card.absent {
-    border-color: rgba(244, 92, 67, 0.4);
-    background: rgba(244, 92, 67, 0.1);
+    border-color: #fecaca;
+    /* subtle red border */
+    background: #fef2f2;
+    /* subtle red bg */
 }
 
-.student-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    flex-shrink: 0;
-}
+
 
 .student-info {
     flex: 1;
@@ -504,12 +503,13 @@ body {
 }
 
 .student-reg {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-primary);
     font-family: 'Courier New', monospace;
-    min-width: 100px;
+    min-width: 120px;
     flex-shrink: 0;
+    letter-spacing: 0.5px;
 }
 
 .student-name {
@@ -537,15 +537,15 @@ body {
 }
 
 .student-card.present .status-toggle {
-    background: var(--success-gradient);
+    background: var(--success-color);
     color: white;
-    box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4);
+    box-shadow: none;
 }
 
 .student-card.absent .status-toggle {
-    background: var(--danger-gradient);
+    background: var(--danger-color);
     color: white;
-    box-shadow: 0 4px 15px rgba(244, 92, 67, 0.4);
+    box-shadow: none;
 }
 
 /* Absentees Section */
@@ -557,8 +557,10 @@ body {
 .absentees-list {
     min-height: 60px;
     padding: var(--spacing-md);
-    background: rgba(0, 0, 0, 0.2);
+    background: #f1f5f9;
+    /* Slate 100 */
     border-radius: var(--radius-md);
+    border: 1px dashed #cbd5e1;
 }
 
 .no-absentees {
@@ -575,12 +577,12 @@ body {
 
 .absentee-chip {
     padding: var(--spacing-xs) var(--spacing-md);
-    background: rgba(244, 92, 67, 0.2);
-    border: 1px solid rgba(244, 92, 67, 0.4);
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
     border-radius: var(--radius-full);
     font-size: 0.8rem;
     font-family: 'Courier New', monospace;
-    color: var(--danger-color);
+    color: #991b1b;
 }
 
 /* Submit Section */
@@ -595,7 +597,8 @@ body {
     align-items: center;
     gap: var(--spacing-md);
     padding: var(--spacing-lg) var(--spacing-2xl);
-    background: var(--primary-gradient);
+    background: var(--primary-color);
+    /* Solid blue */
     border: none;
     border-radius: var(--radius-xl);
     font-family: inherit;
@@ -606,7 +609,8 @@ body {
     transition: var(--transition-normal);
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    /* Professional shadow */
 }
 
 .submit-btn:hover {
@@ -625,8 +629,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
+    background: rgba(15, 23, 42, 0.75);
+    /* Darker slate overlay */
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -655,6 +660,13 @@ body {
     transform: translateY(0) scale(1);
 }
 
+.modal {
+    background: #ffffff;
+    /* Solid white for modal */
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -674,8 +686,9 @@ body {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
+    background: #f1f5f9;
+    /* Slate 100 */
+    border: 1px solid #e2e8f0;
     border-radius: var(--radius-sm);
     color: var(--text-primary);
     font-size: 1.5rem;
@@ -701,7 +714,8 @@ body {
 .summary-card {
     text-align: center;
     padding: var(--spacing-md);
-    background: rgba(255, 255, 255, 0.1);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: var(--radius-md);
 }
 
@@ -731,7 +745,8 @@ body {
 }
 
 .absentees-result {
-    background: rgba(0, 0, 0, 0.2);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
 }
@@ -761,7 +776,7 @@ body {
     display: flex;
     gap: var(--spacing-md);
     padding: var(--spacing-lg) var(--spacing-xl);
-    border-top: 1px solid var(--glass-border);
+    border-top: 1px solid #e2e8f0;
     flex-wrap: wrap;
 }
 
@@ -773,8 +788,9 @@ body {
 
 /* New Result Format Styles */
 .period-date-info {
-    background: rgba(102, 126, 234, 0.15);
-    border: 1px solid rgba(102, 126, 234, 0.3);
+    background: #f0fdf4;
+    /* faint green/indigo hint */
+    border: 1px solid #c7d2fe;
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
@@ -788,7 +804,7 @@ body {
 }
 
 .info-row:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .info-label {
@@ -805,8 +821,8 @@ body {
 }
 
 .absentees-box {
-    background: rgba(244, 92, 67, 0.1);
-    border: 1px solid rgba(244, 92, 67, 0.3);
+    background: #fef2f2;
+    border: 1px solid #fecaca;
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
 }
@@ -824,7 +840,8 @@ body {
     line-height: 2;
     color: var(--danger-color);
     word-break: break-word;
-    background: rgba(0, 0, 0, 0.2);
+    background: #fee2e2;
+    border: 1px solid #fecaca;
     padding: var(--spacing-md);
     border-radius: var(--radius-sm);
 }
@@ -845,9 +862,10 @@ body {
     width: 400px;
     max-width: 100%;
     height: 100%;
-    background: rgba(26, 26, 46, 0.95);
-    backdrop-filter: blur(20px);
-    border-left: 1px solid var(--glass-border);
+    background: #ffffff;
+    /* Clean white drawer */
+    border-left: 1px solid #e2e8f0;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.05);
     z-index: 1001;
     transition: var(--transition-normal);
     display: flex;
@@ -863,7 +881,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-lg) var(--spacing-xl);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid #e2e8f0;
     flex-shrink: 0;
 }
 
@@ -886,15 +904,15 @@ body {
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: var(--radius-md);
     margin-bottom: var(--spacing-md);
     transition: var(--transition-normal);
 }
 
 .history-item:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #f1f5f9;
 }
 
 .history-item-content {
@@ -908,8 +926,8 @@ body {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(244, 92, 67, 0.2);
-    border: 1px solid rgba(244, 92, 67, 0.4);
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
     border-radius: var(--radius-sm);
     color: var(--danger-color);
     cursor: pointer;
@@ -918,7 +936,7 @@ body {
 }
 
 .delete-history-btn:hover {
-    background: var(--danger-gradient);
+    background: #ef4444;
     border-color: transparent;
     color: white;
     transform: scale(1.1);
@@ -962,7 +980,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(15, 23, 42, 0.5);
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -980,9 +998,11 @@ body {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
+    background: #1e293b;
+    /* Slate 800 */
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: none;
     padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--radius-full);
     font-size: 0.875rem;
@@ -1149,4 +1169,125 @@ body {
 
 .slide-up {
     animation: slideUp 0.4s ease;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .header {
+        padding: var(--spacing-md);
+    }
+
+    .university-name {
+        font-size: 1.25rem;
+    }
+
+    .controls-section {
+        padding: var(--spacing-md);
+    }
+
+    .students-section {
+        padding: var(--spacing-md);
+    }
+
+    /* Mobile Student Card - Stack Layout */
+    .student-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    .student-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .student-reg {
+        font-size: 1rem;
+        font-weight: 800;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .student-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        width: 100%;
+        line-height: 1.4;
+    }
+
+    .status-toggle {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        margin-top: var(--spacing-xs);
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .attendance-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .action-btn {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .university-name {
+        font-size: 1.1rem;
+    }
+
+    .section-badge {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .student-reg {
+        font-size: 0.95rem;
+    }
+
+    .student-name {
+        font-size: 0.85rem;
+    }
+
+    .status-toggle {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
 }

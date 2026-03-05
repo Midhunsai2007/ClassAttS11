@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ClassAtt</string>
+    <string name="title_activity_main">ClassAtt</string>
+    <string name="package_name">com.kalasalingam.classatt</string>
+    <string name="custom_url_scheme">com.kalasalingam.classatt</string>
+</resources>

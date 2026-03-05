@@ -1,0 +1,21 @@
+{
+  "name": "Kalasalingam University Class Attendance System",
+  "short_name": "ClassAtt",
+  "description": "Offline-capable Attendance Tracking System for Kalasalingam University",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#0f3460",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Kalasalingam_Academy_of_Research_and_Education_Logo.png/192px-Kalasalingam_Academy_of_Research_and_Education_Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Kalasalingam_Academy_of_Research_and_Education_Logo.png/512px-Kalasalingam_Academy_of_Research_and_Education_Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
