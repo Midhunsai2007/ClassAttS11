@@ -566,18 +566,16 @@ function setupEventListeners() {
 document.addEventListener('DOMContentLoaded', init);
 
 // ============================================
-// SERVICE WORKER REGISTRATION
+// SERVICE WORKER UNREGISTRATION (PREVENT CACHING)
 // ============================================
 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+        for (let registration of registrations) {
+            registration.unregister().then(() => {
+                console.log('Service Worker unregistered to prevent cache issues');
             });
+        }
     });
 }
 
