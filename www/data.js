@@ -65,7 +65,6 @@ const students = [
     { regNo: "99240040942", name: "HARINI J" },
     { regNo: "99240040944", name: "SANTHIYA S" },
     { regNo: "99240040945", name: "KAAVALI VINEETH" },
-    { regNo: "99240040946", name: "KAMMARAPALLI ARJUN" },
     { regNo: "99240040947", name: "KAMALAMARRY JAHNAVI" },
     { regNo: "99240040948", name: "NALLADIMMU NAGA LAKSHMAN" },
     { regNo: "99240040949", name: "KANCHARLA POORNACHANDRA" },
@@ -80,43 +79,35 @@ const students = [
 
 const courses = [
     {
-        code: "212CSE2101",
-        name: "Discrete Mathematics",
-        credits: 4,
-        category: "Program Core Courses",
-        type: "Theory Course",
-        faculty: "Dr. G. CHITRA"
-    },
-    {
-        code: "212CSE2303",
-        name: "Software Engineering",
-        credits: 3,
-        category: "Program Core Courses",
-        type: "Integrated Course Theory",
-        faculty: "Ms. Sujitha S"
-    },
-    {
-        code: "212CSE2304",
-        name: "Machine Learning",
+        code: "212CSE3301",
+        name: "Design and Analysis of Algorithms",
         credits: 4,
         category: "Program Core Courses",
         type: "Integrated Course Theory",
-        faculty: "Mrs. A. M. GURUSIGAAMANI"
+        faculty: "Mrs. P. KALAIARASI"
     },
     {
-        code: "212CSE2305",
-        name: "Database Management Systems",
+        code: "212CSE3302",
+        name: "Computer Networks",
         credits: 4,
         category: "Program Core Courses",
         type: "Integrated Course Theory",
-        faculty: "Dr. M. K. NAGARAJAN"
+        faculty: "Dr. NITHYANANTHAM SAMPATHKUMAR"
     },
     {
-        code: "213CSE2301",
-        name: "Predictive Analytics",
+        code: "212CSE3303",
+        name: "Operating Systems",
+        credits: 4,
+        category: "Program Core Courses",
+        type: "Integrated Course Theory",
+        faculty: "DR.S.DHANASEKARAN"
+    },
+    {
+        code: "213CSE3301",
+        name: "Deep Learning",
         credits: 4,
         category: "Program Elective Courses",
         type: "Integrated Course Theory",
-        faculty: "Mrs. P. KALAIARASI"
+        faculty: "Mr. N. R. SATHIS KUMAR"
     }
 ];
