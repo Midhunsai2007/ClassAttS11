@@ -1,4 +1,4 @@
-const CACHE_NAME = 'classatt-cache-v1';
+const CACHE_NAME = 'classatt-cache-v2';
 const urlsToCache = [
     './',
     './index.html',
@@ -17,48 +17,7 @@ self.addEventListener('install', event => {
                 console.log('Opened cache');
                 return cache.addAll(urlsToCache);
             })
-    );
-});
-
-// Fetch event - network falling back to cache
-self.addEventListener('fetch', event => {
-    // Only cache GET requests
-    if (event.request.method !== 'GET') return;
-
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                // Cache hit - return response
-                if (response) {
-                    return response;
-                }
-
-                const fetchRequest = event.request.clone();
-
-                return fetch(fetchRequest).then(
-                    function (response) {
-                        // Check if we received a valid response
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-
-                        // Clone the response because we want to cache it AND return it
-                        const responseToCache = response.clone();
-
-                        caches.open(CACHE_NAME)
-                            .then(function (cache) {
-                                // Ensure the URL is cacheable (e.g. starts with http)
-                                if (event.request.url.startsWith('http')) {
-                                    cache.put(event.request, responseToCache);
-                                }
-                            });
-
-                        return response;
-                    }
-                ).catch(err => {
-                    console.log('Fetch failed; returning offline page instead.', err);
-                });
-            })
+            .then(() => self.skipWaiting()) // force sw to activate immediately
     );
 });
 
@@ -70,10 +29,36 @@ self.addEventListener('activate', event => {
             return Promise.all(
                 cacheNames.map(cacheName => {
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        console.log('Deleting old cache:', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim()) // claim all clients immediately
+    );
+});
+
+// Fetch event - Network-first falling back to cache
+self.addEventListener('fetch', event => {
+    if (event.request.method !== 'GET') return;
+
+    event.respondWith(
+        fetch(event.request)
+            .then(response => {
+                // If response is valid, clone it and cache it
+                if (response && response.status === 200 && response.type === 'basic') {
+                    const responseToCache = response.clone();
+                    caches.open(CACHE_NAME).then(cache => {
+                        if (event.request.url.startsWith('http')) {
+                            cache.put(event.request, responseToCache);
+                        }
+                    });
+                }
+                return response;
+            })
+            .catch(() => {
+                // If network fails, try cache
+                return caches.match(event.request);
+            })
     );
 });
